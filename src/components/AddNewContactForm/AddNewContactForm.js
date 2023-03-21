@@ -41,7 +41,11 @@ const AddNewContactForm = () => {
 
   const submitHandler = () => {
     const { fullName, email, phoneNumber, gender } = values;
+    const phoneNumberIsValid = /^\d+$/.test(phoneNumber);
+
     if (fullName && email && phoneNumber && gender) {
+      if (phoneNumber.length > 10 || !phoneNumberIsValid) {
+      }
       setTimeout(() => {
         router.push("/contacts");
       }, 2000);

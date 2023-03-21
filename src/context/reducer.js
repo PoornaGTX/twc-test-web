@@ -62,7 +62,7 @@ const reducer = (state, action) => {
       user: action.payload.user,
       showAlert: true,
       alertType: "success",
-      alertText: "User Created! Redirecting",
+      alertText: "User Created! Redirecting...",
     };
   }
 
@@ -88,7 +88,7 @@ const reducer = (state, action) => {
       user: action.payload.user,
       showAlert: true,
       alertType: "success",
-      alertText: "Login Successful! Redirecting",
+      alertText: "Login Successful! Redirecting...",
     };
   }
 
@@ -124,7 +124,7 @@ const reducer = (state, action) => {
       isLoading: false,
       showAlert: true,
       alertType: "success",
-      alertText: "Contact add Succesfull",
+      alertText: "Contact added Successful Redirecting...",
     };
   }
 

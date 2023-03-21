@@ -4,7 +4,7 @@ import Modal from "../Modal/Modal";
 import { useAppContext } from "../../context/appContext";
 import { useRouter } from "next/router";
 
-const ContactsTable = ({ data }) => {
+const ContactsTable = () => {
   const {
     getContacts,
     contacts,
@@ -36,9 +36,18 @@ const ContactsTable = ({ data }) => {
     const { fullName, phoneNumber } = editContactRowData;
 
     //user error handling with modal
-    if (!fullName || !phoneNumber) {
+    if (
+      !fullName ||
+      !phoneNumber ||
+      phoneNumber.toString().length !== 10 ||
+      !/^\d+$/.test(phoneNumber)
+    ) {
       setIsOpen(true);
-      setModalTile("Pleae Provide All values");
+      setModalTile(
+        phoneNumber.toString().length !== 10 || !/^\d+$/.test(phoneNumber)
+          ? "Invalid phone number"
+          : "Pleae Provide All values"
+      );
       setModalConfirmButton(false);
       setAlertType("danger");
     } else {
@@ -98,7 +107,7 @@ const ContactsTable = ({ data }) => {
                 <th></th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Position</th>
+                <th>Gender</th>
                 <th>Action</th>
               </tr>
             </thead>
