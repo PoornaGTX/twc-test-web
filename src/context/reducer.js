@@ -37,7 +37,7 @@ const reducer = (state, action) => {
       ...state,
       showAlert: true,
       alertType: "danger",
-      alertText: "Password mismatch",
+      alertText: "Password mismatched",
     };
   }
 
@@ -124,7 +124,7 @@ const reducer = (state, action) => {
       isLoading: false,
       showAlert: true,
       alertType: "success",
-      alertText: "Contact added Successful Redirecting...",
+      alertText: "Contact added Successful, Redirecting...",
     };
   }
 

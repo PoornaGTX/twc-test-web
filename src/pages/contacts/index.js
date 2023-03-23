@@ -2,7 +2,6 @@ import ContactsTable from "@/components/ContactsTable/ContactsTable";
 import ContactUsHeader from "@/components/ContactUsHeader/ContactUsHeader";
 import LogoutButton from "@/components/LogoutButton/LogoutButton";
 import Layout from "@/Layout/Layout";
-import { contactData } from "@/utils/contactsData";
 import React, { useEffect } from "react";
 import { useAppContext } from "../../context/appContext";
 import { useRouter } from "next/router";

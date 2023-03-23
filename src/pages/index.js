@@ -11,8 +11,6 @@ export default function Home() {
   const { user, contacts, getContacts } = useAppContext();
   const router = useRouter();
 
-  console.log(contacts.length);
-
   useEffect(() => {
     getContacts();
     if (!user) {

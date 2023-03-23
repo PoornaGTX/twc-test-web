@@ -19,7 +19,6 @@ const LoginRegisterForm = () => {
     alertText,
     showAlert,
     displayPasswordMismatch,
-    getContacts,
     alertType,
   } = useAppContext();
 

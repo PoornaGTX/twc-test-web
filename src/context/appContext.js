@@ -24,7 +24,6 @@ import {
 } from "./action";
 
 if (typeof window !== "undefined") {
-  // Perform localStorage action
   var token = localStorage.getItem("token");
   var user = localStorage.getItem("user");
 }
@@ -117,7 +116,6 @@ const AppProvider = ({ children }) => {
         currentUser
       );
       const { user, token } = response.data;
-      console.log(response.data);
       dispatch({
         type: REGISTER_USER_SUCCESS,
         payload: { user, token },
@@ -143,13 +141,13 @@ const AppProvider = ({ children }) => {
         currentUser
       );
 
-      const { user, token, location } = response.data;
+      const { user, token } = response.data;
       dispatch({
         type: LOGIN_USER_SUCCESS,
-        payload: { user, token, location },
+        payload: { user, token },
       });
 
-      addUserToLocalStorage({ user, token, location });
+      addUserToLocalStorage({ user, token });
     } catch (error) {
       dispatch({
         type: LOGIN_USER_ERROR,
